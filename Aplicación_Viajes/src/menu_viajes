@@ -1,19 +1,19 @@
-
-
 import java.util.Scanner;
 
-public class menu_viajes {
-
-	public menu_viajes(Usuario usuario) {
-
-	}
-
+public class menu_viajes extends Usuario{
+	
+	protected Usuario usuario;
 	int tipo;
 	String nombreHotel;
 	String localidad;
 	int fecha;
 	int opcion;
 	String parteViajar;
+
+
+	public menu_viajes(Usuario usuario) {
+	}
+
 
 	public void menuViajes() {
 
