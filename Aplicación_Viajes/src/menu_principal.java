@@ -9,13 +9,15 @@ public class menu_principal {
 		int opcion;
 		Scanner sc1 = new Scanner(System.in);
 		Usuario usuario0 = new Usuario(null, null, null, 0);
+		menu_viajes menuViajes1 = new menu_viajes(usuario0);
 
 		boolean salir = false;
 
 		while (salir == false) {
 			System.out.print("------MENÚ INICIO------" + "\n1. Registrar Nuevo Usuario." + "\n2. Iniciar Sesión." + "\n\nIntroduzca opción: ");
 			opcion = sc1.nextInt();
-
+			System.out.println();
+			
 			switch (opcion) {
 
 			case 1: {
@@ -27,9 +29,11 @@ public class menu_principal {
 
 			case 2: {
 				usuario0.IniciarSesion();
+				System.out.println();
+				salir = true;
 			}
 			}
+		
 		}
 	}
-
 }
