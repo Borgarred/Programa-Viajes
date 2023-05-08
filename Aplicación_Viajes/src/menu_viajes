@@ -14,10 +14,11 @@ public class menu_viajes extends Usuario {
 	public menu_viajes(Usuario usuario) {
 	}
 
-	public void menuViajes() {
+	public void menuDestino(String nombre) {
 
 		Scanner sc1 = new Scanner(System.in);
-		System.out.println("Elige una opcion: \n(1)-Viajar \n(2)-Recomendaciones \n(3)-Sobre nosotros...");
+		System.out.println("¡Hola!" + nombre
+				+ " elige una de nuestras opciones: \n(1)-Viajar \n(2)-Recomendaciones \n(3)-Sobre nosotros...");
 		opcion = Integer.parseInt(sc1.nextLine());
 
 		if (opcion > 3 || opcion < 1) {
@@ -33,10 +34,21 @@ public class menu_viajes extends Usuario {
 
 			if (parteViajar.equals("Andalucia")) {
 				System.out.println("--OPCIONES PARA VIAJAR EN ANDALUCIA--");
+				System.out.println("Para el destino Andalucia tenemos viajes a Cadiz o Córdoba");
+				System.out.println("¿Qué destino prefieres? \n(1)Cadiz \n(2)Córdoba");
+				int destinoAndalucia = Integer.parseInt(sc1.nextLine());
 
-				System.out.println("---VIAJE A CADIZ---");
+				System.out.println("¡Perfecto! Vamos a elegir fechas para tu estancia:");
 
-				System.out.println("---VIAJE A CÓRDOBA---");
+				System.out.println("Introduce en que mes vas a viajar");
+				String mes = sc1.nextLine();
+
+				System.out.println("Introduce el dia que vas a viajar");
+				int diaIda = Integer.parseInt(sc1.nextLine());
+
+				System.out.println("Introduce el dia que vas a volver");
+				int diaVuelta = Integer.parseInt(sc1.nextLine());
+
 				break;
 			}
 
@@ -50,7 +62,7 @@ public class menu_viajes extends Usuario {
 			}
 
 			else if (parteViajar.equals("Galicia")) {
-				System.out.println("--OPCIONES PARA VIAJAR EN GALICIA--");
+				System.out.println("--OPCIONES PARA VIAJAR EN EXTREMADURA--");
 
 			}
 
@@ -66,27 +78,32 @@ public class menu_viajes extends Usuario {
 			playa = Integer.parseInt(sc1.nextLine());
 			System.out.println("¿Prefieres un destino en la peninsula?\n(1)Si \n(2)No");
 			int destino = Integer.parseInt(sc1.nextLine());
-			
+
 			if (playa == 1 && destino == 1) {
 				System.out.println("--VIAJE A ANDALUCIA--");
 			}
-			
+
 			else if (playa == 1 && destino == 2) {
 				System.out.println("--VIAJE A CANARIAS--");
 
 			}
-			
-			else if( playa == 2 && destino == 1) {
-				System.out.println("--VIAJE A MADRID--");
 
+			else if (playa == 2 && destino == 1) {
+				System.out.println("¿Prefieres un destino en la capital?\n(1)Si \n(2)No");
+				int peninsula = Integer.parseInt(sc1.nextLine());
+				if (peninsula == 1) {
+					System.out.println("--VIAJE A MADRID--");
+				} else if (peninsula == 2) {
+					System.out.println("--VIAJE A EXTREMADURA--");
+
+				}
 			}
-			
-			else if( playa == 2 && destino == 2) {
+
+			else if (playa == 2 && destino == 2) {
 				System.err.println("Lo sentimos no hay viajes disponibles sin playa y fuera de la peninsula...");
 
 			}
-		
-			
+
 			break;
 		}
 
