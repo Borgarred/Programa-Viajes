@@ -29,13 +29,22 @@ public class menu_principal {
 			}
 
 			case 2: {
-				usuario0.IniciarSesion();
-				System.out.println();
-				salir = true;
-				viajes.menuViajes();
+
+				while (true) {
+					try {
+						usuario0.IniciarSesion();
+						System.out.println();
+						viajes.menuDestino(usuario0.nombre);
+					} catch (Exception e) {
+						System.err.println("USUARIO NO REGISTRADO");
+						System.out.println();
+					}
+				}
+
+				
 
 			}
-		
+
 			}
 
 		}
