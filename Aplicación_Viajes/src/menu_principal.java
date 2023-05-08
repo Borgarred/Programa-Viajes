@@ -13,7 +13,7 @@ public class menu_principal {
 		boolean salir = false;
 
 		while (salir == false) {
-			System.out.println("------MENÚ INICIO------" + "\n1. Registrar Nuevo Usuario." + "\n2. Iniciar Sesión.");
+			System.out.print("------MENÚ INICIO------" + "\n1. Registrar Nuevo Usuario." + "\n2. Iniciar Sesión." + "\n\nIntroduzca opción: ");
 			opcion = sc1.nextInt();
 
 			switch (opcion) {
