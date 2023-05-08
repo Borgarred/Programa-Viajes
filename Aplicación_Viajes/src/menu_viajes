@@ -1,7 +1,9 @@
+package Aplicacion_Viajes;
+
 import java.util.Scanner;
 
-public class menu_viajes extends Usuario{
-	
+public class menu_viajes extends Usuario {
+
 	protected Usuario usuario;
 	int tipo;
 	String nombreHotel;
@@ -9,11 +11,10 @@ public class menu_viajes extends Usuario{
 	int fecha;
 	int opcion;
 	String parteViajar;
-
+	int playa;
 
 	public menu_viajes(Usuario usuario) {
 	}
-
 
 	public void menuViajes() {
 
@@ -31,8 +32,14 @@ public class menu_viajes extends Usuario{
 
 			System.out.println("¿En que parte de España quieres viajar? (Comunidad Autonoma)");
 			parteViajar = sc1.nextLine();
+
 			if (parteViajar.equals("Andalucia")) {
 				System.out.println("--OPCIONES PARA VIAJAR EN ANDALUCIA--");
+
+				System.out.println("---VIAJE A CADIZ---");
+
+				System.out.println("---VIAJE A CÓRDOBA---");
+				break;
 			}
 
 			else if (parteViajar.equals("Canarias")) {
@@ -56,6 +63,21 @@ public class menu_viajes extends Usuario{
 		}
 		case 2: {
 			System.out.println("---RECOMENDACIONES---");
+			System.out.println("Para recomedarte el mejor destino para ti, necesitamos hacerte algunas preguntas");
+			System.out.println("¿Prefieres un destino con playa?\n(1)Si \n(2)No");
+			playa = Integer.parseInt(sc1.nextLine());
+			System.out.println("¿Prefieres un destino en la peninsula?\n(1)Si \n(2)No");
+			int destino = Integer.parseInt(sc1.nextLine());
+			
+			if (playa == 1 && destino == 1) {
+				System.out.println("--VIAJE A ANDALUCIA--");
+			}
+			
+			if (playa == 1 && destino == 2) {
+				System.out.println("--VIAJE A CANARIAS--");
+
+			}
+			
 			break;
 		}
 
