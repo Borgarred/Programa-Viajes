@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-public class menu_principal {
+public class menu_viajes {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
