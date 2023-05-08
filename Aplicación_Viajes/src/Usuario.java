@@ -16,9 +16,9 @@ public class Usuario extends menu_principal {
 		this.DNI = DNI;
 		this.edad = edad;
 	}
-	
+
 	public Usuario() {
-		
+
 	}
 
 	public void NuevoUsuario() {
@@ -67,24 +67,20 @@ public class Usuario extends menu_principal {
 
 		boolean salir = false;
 
-		try {
+		while (salir == false) {
 
-			while (salir == false) {
+			if (arrayUsuarios[i].nombre.equals(nombre) && arrayUsuarios[i].apellidos.equals(apellidos)) {
 
-				if (arrayUsuarios[i].nombre.equals(nombre) && arrayUsuarios[i].apellidos.equals(apellidos)) {
+				this.nombre = nombre;
+				this.apellidos = apellidos;
+				System.out.println("¡Has iniciado sesión con " + nombre + " " + apellidos + "!");
+				salir = true;
 
-					this.nombre = nombre;
-					this.apellidos = apellidos;
-					System.out.println("¡Has iniciado sesión con " + nombre + " " + apellidos + "!");
-					salir = true;
-				} else {
-					i = i + 1;
-					;
-				}
+			} else {
+				i = i + 1;
 			}
-		} catch (Exception e) {
-			System.err.println("USUARIO NO REGISTRADO");
 		}
+
 	}
 
 }
