@@ -49,6 +49,15 @@ public class menu_viajes extends Usuario {
 				System.out.println("Introduce el dia que vas a volver");
 				int diaVuelta = Integer.parseInt(sc1.nextLine());
 
+				if (destinoAndalucia == 1) {
+					System.out.println("¡Ya hemos organizado tu viaje! \nViaje a Cadiz en el mes de " + mes
+							+ ", desde el dia " + diaIda + " hasta el dia " + diaVuelta);
+				}
+
+				else if (destinoAndalucia == 2) {
+					System.out.println("¡Ya hemos organizado tu viaje! \nViaje a Córdoba en el mes de " + mes
+							+ ", desde el dia " + diaIda + " hasta el dia " + diaVuelta);
+				}
 				break;
 			}
 
