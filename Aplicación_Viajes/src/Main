@@ -1,1 +1,50 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int opcion;
+		Scanner sc = new Scanner(System.in);
+
+		menu_principal Menu1 = new menu_principal();
+		Usuario usuario0 = new Usuario(null, null, null, 0);
+		menu_viajes viajes = new menu_viajes(usuario0);
+
+			boolean salir = false;
+	
+			while (salir == false) {
+				Menu1.Menu();
+	
+				switch (Menu1.opcion) {
+	
+					case 1: {
+						usuario0.NuevoUsuario();
+						usuario0.ListaUsuarios();
+						System.out.println();
+						break;
+					}
+	
+					case 2: {
+	
+						while (true) {
+							try {
+								usuario0.IniciarSesion();
+								System.out.println();
+								viajes.menuDestino(usuario0.nombre);
+								salir = true;
+							break;
+						} catch (Exception e) {
+							System.err.println("USUARIO NO REGISTRADO");
+							System.out.println();
+							break;
+						}
+					}
+				}
+			}
+		}
+	}
+
+}
 
