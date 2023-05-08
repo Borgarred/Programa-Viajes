@@ -16,6 +16,10 @@ public class Usuario extends menu_principal {
 		this.DNI = DNI;
 		this.edad = edad;
 	}
+	
+	public Usuario() {
+		
+	}
 
 	public void NuevoUsuario() {
 
@@ -58,30 +62,27 @@ public class Usuario extends menu_principal {
 		System.out.print("Introduzca su nombre: ");
 		String nombre = sc.nextLine();
 
-		/*
-		 * System.out.print("Introduzca sus apellidos: "); String apellidos =
-		 * sc.nextLine();
-		 */
+		System.out.print("Introduzca sus apellidos: ");
+		String apellidos = sc.nextLine();
 
 		boolean salir = false;
-		
+
 		try {
-			
-		
+
 			while (salir == false) {
 
-				if (arrayUsuarios[i].nombre == nombre /* && arrayUsuarios[i].apellidos == apellidos */) {
-					
+				if (arrayUsuarios[i].nombre.equals(nombre) && arrayUsuarios[i].apellidos.equals(apellidos)) {
+
 					this.nombre = nombre;
-					/* this.apellidos = apellidos; */
-					System.out.println("¡Has iniciado sesión con " + nombre/* + " " + apellidos +"!" */);
+					this.apellidos = apellidos;
+					System.out.println("¡Has iniciado sesión con " + nombre + " " + apellidos + "!");
 					salir = true;
 				} else {
 					i = i + 1;
 					;
 				}
 			}
-		}catch (Exception e) {
+		} catch (Exception e) {
 			System.err.println("USUARIO NO REGISTRADO");
 		}
 	}
