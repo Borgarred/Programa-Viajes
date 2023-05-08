@@ -1,5 +1,3 @@
-package Aplicacion_Viajes;
-
 import java.util.Scanner;
 
 public class menu_viajes extends Usuario {
@@ -46,8 +44,8 @@ public class menu_viajes extends Usuario {
 				System.out.println("--OPCIONES PARA VIAJAR EN CANARIAS--");
 			}
 
-			else if (parteViajar.equals("Cataluña")) {
-				System.out.println("--OPCIONES PARA VIAJAR EN CATALUÑA--");
+			else if (parteViajar.equals("Madrid")) {
+				System.out.println("--OPCIONES PARA VIAJAR EN MADRID--");
 
 			}
 
@@ -73,10 +71,21 @@ public class menu_viajes extends Usuario {
 				System.out.println("--VIAJE A ANDALUCIA--");
 			}
 			
-			if (playa == 1 && destino == 2) {
+			else if (playa == 1 && destino == 2) {
 				System.out.println("--VIAJE A CANARIAS--");
 
 			}
+			
+			else if( playa == 2 && destino == 1) {
+				System.out.println("--VIAJE A MADRID--");
+
+			}
+			
+			else if( playa == 2 && destino == 2) {
+				System.err.println("Lo sentimos no hay viajes disponibles sin playa y fuera de la peninsula...");
+
+			}
+		
 			
 			break;
 		}
