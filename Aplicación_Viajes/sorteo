@@ -1,0 +1,48 @@
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+import java.util.Stack;
+
+public class sorteo {
+	public void sorteo() {
+		Stack<String> pila = new Stack<>();
+
+		// Agregar elementos a la pila
+		pila.push("🎁");
+		pila.push("🎁");
+		pila.push("🎁");
+		Queue<String> cola = new LinkedList<>();
+
+		// Agregar elementos a la cola
+		cola.add("🎁");
+		cola.add("🎁");
+		cola.add("🎁");
+
+		// Imprimir la pila
+		System.out.println("¡Estamos sorteando un viaje a Mallorca!");
+		System.out.println("Para participar solo tienes que elegir un regalo, ¡Suerte!");
+		System.out.println(pila);
+
+		Scanner sc1 = new Scanner(System.in);
+		System.out.println("Elige un regalo del 1 al 3: ");
+		int n = Integer.parseInt(sc1.nextLine());
+
+		switch (n) {
+		case 1: {
+			// Eliminar un elemento de la pila
+			String eliminado = pila.pop();
+			System.out.println("¡FELICIDADES! \nERES EL GANADOR DEL VIAJE A MALLORCA");
+			break;
+		}
+		case 2: {
+			System.out.println("Lo sentimos ese regalo no tiene premio...");
+			break;
+		}
+		case 3: {
+			System.out.println("Lo sentimos ese regalo no tiene premio...");
+			break;
+		}
+		}
+	}
+}
