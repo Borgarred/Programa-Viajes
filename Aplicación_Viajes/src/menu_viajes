@@ -32,7 +32,11 @@ public class menu_viajes extends Usuario {
 		}
 
 		else if (comunidad.equals("Canarias")) {
-			System.out.println("--OPCIONES PARA VIAJAR EN CANARIAS--");
+			System.out.println("--OPCIONES PARA VIAJAR EN CANARIAS--"
+					+ "\nPara el destino Canarias tenemos viajes a Tenerife o La Palma"
+					+ "\n¿Qué destino prefieres? \n(1)Tenerife \n(2)La Palma");
+			destino = sc.nextInt();
+
 		}
 
 		else if (comunidad.equals("Madrid")) {
@@ -52,7 +56,7 @@ public class menu_viajes extends Usuario {
 	}
 
 	public void menuFecha() {
-		
+
 		sc.nextLine();
 
 		System.out.print("¡Perfecto! Vamos a elegir fechas para tu estancia: \nIntroduce en que mes vas a viajar: ");
@@ -64,8 +68,7 @@ public class menu_viajes extends Usuario {
 		System.out.print("Selecciona la fecha de salida: ");
 		int diaVuelta = sc.nextInt();
 
-		
-
+		System.out.println();
 		System.out.println("¡Ya hemos organizado tu viaje! \nViaje a " + this.destino + " en el mes de " + mes
 				+ ", desde el dia " + diaIda + " hasta el dia " + diaVuelta);
 		System.out.println();
