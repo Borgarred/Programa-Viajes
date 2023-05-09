@@ -137,14 +137,19 @@ public class menu_viajes extends Usuario {
 			// Eliminar un elemento de la pila
 			String eliminado = pila.pop();
 			System.out.println("¡FELICIDADES! \nERES EL GANADOR DEL VIAJE A MALLORCA");
+			System.out.println();
 			break;
 		}
 		case 2: {
 			System.out.println("Lo sentimos ese regalo no tiene premio...");
+			System.out.println();
+
 			break;
 		}
 		case 3: {
 			System.out.println("Lo sentimos ese regalo no tiene premio...");
+			System.out.println();
+
 			break;
 		}
 		}
