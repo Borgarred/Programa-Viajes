@@ -5,50 +5,74 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		int opcion;
 		Scanner sc = new Scanner(System.in);
 
 		menu_principal Menu1 = new menu_principal();
 		Usuario usuario0 = new Usuario(null, null, null, 0);
 		menu_viajes viajes = new menu_viajes(usuario0);
-		sorteo sorteoViaje = new sorteo();
-		
-			boolean salir = false;
-	
-			while (salir == false) {
-				Menu1.Menu();
-	
-				switch (Menu1.opcion) {
-	
-					case 1: {
-						usuario0.NuevoUsuario();
-						usuario0.ListaUsuarios();
+
+		boolean salir = false;
+		boolean salir1 = false;
+		boolean salir2 = false;
+
+		while (salir == false) {
+			Menu1.Menu();
+
+			switch (Menu1.opcion1) {
+
+			case 1: {
+
+				usuario0.NuevoUsuario();
+				usuario0.ListaUsuarios();
+				System.out.println();
+				break;
+			}
+
+			case 2: {
+
+				while (salir1 == false) {
+					try {
+
+						usuario0.IniciarSesion();
+						salir = true;
+						salir1 = true;
+
+					} catch (Exception e) {
+						System.err.println("USUARIO NO REGISTRADO");
 						System.out.println();
 						break;
 					}
-	
-					case 2: {
-	
-						while (true) {
-							try {
-								usuario0.IniciarSesion();
-								System.out.println();
-								viajes.menuDestino(usuario0.nombre);
-								salir = true;
-							break;
-						} catch (Exception e) {
-							System.err.println("USUARIO NO REGISTRADO");
-							System.out.println();
-							break;
-						}
-							
-					}
 				}
-					case 3:{
-						sorteoViaje.sorteo();
-						}
+			}
+			}
+
+		}
+		
+		System.out.println();
+		while (salir2 == false) {
+
+			Menu1.MenuViajes();
+
+			switch (Menu1.opcion2) {
+
+			case 1: {
+				viajes.menuDestino(usuario0.nombre);
+				viajes.menuFecha();
+				break;
+			}
+
+			case 2: {
+				viajes.menuRecomendaciones();
+				break;
+			}
+
+			case 3: {
+				viajes.menuSorteo();
+				break;
+			}
 			}
 		}
+
 	}
 
 }
