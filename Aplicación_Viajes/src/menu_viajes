@@ -1,3 +1,5 @@
+package Aplicacion_Viajes;
+
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
@@ -41,12 +43,16 @@ public class menu_viajes extends Usuario {
 
 		else if (comunidad.equals("Madrid")) {
 			System.out.println("--OPCIONES PARA VIAJAR EN MADRID--");
+			System.out.println(
+					"Para el destino Madrid tenemos viajes a Madrid Capital o Getafe\n¿Qué destino prefieres? \n(1)Madrid Capital \n(2)Getafe");
+			destino = sc.nextInt();
 
 		}
 
-		else if (comunidad.equals("Galicia")) {
+		else if (comunidad.equals("Extremadura")) {
 			System.out.println("--OPCIONES PARA VIAJAR EN EXTREMADURA--");
-
+			System.out.println("Para el destino Extremadura tenemos viajes a Cáceres o Badajoz\n¿Qué destino prefieres? \n(1)Cáceres \n(2)Badajoz");
+			destino = sc.nextInt();
 		}
 
 		else {
