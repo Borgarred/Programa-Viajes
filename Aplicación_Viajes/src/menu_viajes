@@ -51,7 +51,8 @@ public class menu_viajes extends Usuario {
 
 		else if (comunidad.equals("Extremadura")) {
 			System.out.println("--OPCIONES PARA VIAJAR EN EXTREMADURA--");
-			System.out.println("Para el destino Extremadura tenemos viajes a Cáceres o Badajoz\n¿Qué destino prefieres? \n(1)Cáceres \n(2)Badajoz");
+			System.out.println(
+					"Para el destino Extremadura tenemos viajes a Cáceres o Badajoz\n¿Qué destino prefieres? \n(1)Cáceres \n(2)Badajoz");
 			destino = sc.nextInt();
 		}
 
@@ -143,6 +144,9 @@ public class menu_viajes extends Usuario {
 			// Eliminar un elemento de la pila
 			String eliminado = pila.pop();
 			System.out.println("¡FELICIDADES! \nERES EL GANADOR DEL VIAJE A MALLORCA");
+			System.out.println("Introduce tu email para enviarte proximamente todos los datos: ");
+			String email = sc.nextLine();
+			System.out.println("¡Perfecto, espera nuestra respuesta pronto!");
 			System.out.println();
 			break;
 		}
