@@ -3,10 +3,6 @@ import java.util.Scanner;
 public class Usuario extends menu_principal {
 
 	Scanner sc = new Scanner(System.in);
-	protected String nombre;
-	protected String apellidos;
-	protected String DNI;
-	protected int edad;
 
 	int numeroUsuarios = 0;
 
@@ -71,8 +67,8 @@ public class Usuario extends menu_principal {
 
 			if (arrayUsuarios[i].nombre.equals(nombre) && arrayUsuarios[i].apellidos.equals(apellidos)) {
 
-				this.nombre = nombre;
-				this.apellidos = apellidos;
+				super.nombre = nombre;
+				super.apellidos = apellidos;
 				System.out.println("¡Has iniciado sesión con " + nombre + " " + apellidos + "!");
 				salir = true;
 
