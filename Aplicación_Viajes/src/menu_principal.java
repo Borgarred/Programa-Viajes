@@ -4,7 +4,12 @@ public class menu_principal {
 
 	protected Usuario[] arrayUsuarios = new Usuario[100];
 	Scanner sc = new Scanner(System.in);
-	int opcion;
+	protected String nombre;
+	protected String apellidos;
+	protected String DNI;
+	protected int edad;
+	int opcion1;
+	int opcion2;
 	
 	public menu_principal() {
 		
@@ -14,8 +19,17 @@ public class menu_principal {
 		
 		
 		System.out.print("------MENÚ INICIO------" + "\n1. Registrar Nuevo Usuario." + "\n2. Iniciar Sesión."
-				+ "\n\nIntroduzca opción: ");
-		opcion = sc.nextInt();
+				+ "\n\nEscoja una opción: ");
+		this.opcion1 = sc.nextInt();
+	}
+	
+	public void MenuViajes() {
+		
+		System.out.print("¡Hola! " + nombre + " elige una de nuestras opciones: "
+				+ " \n(1)-Viajar \n(2)-Recomendaciones \n(3)-Sobre nosotros..." + "\n\nEscoja una opción: ");
+		this.opcion2 = sc.nextInt();
+		
+		
 	}
 	
 }
