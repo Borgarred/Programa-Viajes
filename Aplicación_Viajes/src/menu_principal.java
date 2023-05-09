@@ -26,7 +26,7 @@ public class menu_principal {
 	public void MenuViajes() {
 		
 		System.out.print("¡Hola! " + nombre + " elige una de nuestras opciones: "
-				+ " \n(1)-Viajar \n(2)-Recomendaciones \n(3)-Sobre nosotros..." + "\n\nEscoja una opción: ");
+				+ " \n(1)-Viajar \n(2)-Recomendaciones \n(3)-Sorteo" + "\n\nEscoja una opción: ");
 		this.opcion2 = sc.nextInt();
 		
 		
