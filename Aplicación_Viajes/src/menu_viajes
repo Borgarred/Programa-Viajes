@@ -91,11 +91,13 @@ public class menu_viajes extends Usuario {
 		this.destino = Integer.parseInt(sc.nextLine());
 
 		if (playa == 1 && destino == 1) {
-			System.out.println("--VIAJE A ANDALUCIA--");
+			System.out.println("La mejor opcion para ti, es un viaje a Andalucía. \nPara organizar tu viaje pulsa la opcion Viajar");
+			System.out.println();
 		}
 
 		else if (playa == 1 && destino == 2) {
-			System.out.println("--VIAJE A CANARIAS--");
+			System.out.println("La mejor opcion para ti, es un viaje a Canarias. \nPara organizar tu viaje pulsa la opcion Viajar");
+			System.out.println();
 
 		}
 
@@ -103,9 +105,11 @@ public class menu_viajes extends Usuario {
 			System.out.println("¿Prefieres un destino en la capital?\n(1)Si \n(2)No");
 			int peninsula = Integer.parseInt(sc.nextLine());
 			if (peninsula == 1) {
-				System.out.println("--VIAJE A MADRID--");
+				System.out.println("La mejor opcion para ti, es un viaje a Madrid. \nPara organizar tu viaje pulsa la opcion Viajar");
+				System.out.println();
 			} else if (peninsula == 2) {
-				System.out.println("--VIAJE A EXTREMADURA--");
+				System.out.println("La mejor opcion para ti, es un viaje a Extremadura. \nPara organizar tu viaje pulsa la opcion Viajar");
+				System.out.println();
 
 			}
 		}
