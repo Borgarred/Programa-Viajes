@@ -11,7 +11,8 @@ public class Main {
 		menu_principal Menu1 = new menu_principal();
 		Usuario usuario0 = new Usuario(null, null, null, 0);
 		menu_viajes viajes = new menu_viajes(usuario0);
-
+		sorteo sorteoViaje = new sorteo();
+		
 			boolean salir = false;
 	
 			while (salir == false) {
@@ -40,11 +41,14 @@ public class Main {
 							System.out.println();
 							break;
 						}
+							
 					}
 				}
+					case 3:{
+						sorteoViaje.sorteo();
+						}
 			}
 		}
 	}
 
 }
-
