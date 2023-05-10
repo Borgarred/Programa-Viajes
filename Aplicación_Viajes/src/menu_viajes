@@ -7,21 +7,24 @@ import java.util.Stack;
 
 public class menu_viajes extends Usuario {
 
+	// Abrimos escanner y ponemos los atributos en protected
 	Scanner sc = new Scanner(System.in);
 	protected Usuario usuario;
-	int tipo;
-	String nombreHotel;
-	String localidad;
-	int fecha;
-	String comunidad;
-	int destino;
-	int playa;
+	protected int tipo;
+	protected String nombreHotel;
+	protected String localidad;
+	protected int fecha;
+	protected String comunidad;
+	protected int destino;
+	protected int playa;
 
 	public menu_viajes(Usuario usuario) {
 	}
 
 	public void menuDestino(String nombre) {
 
+		// El usuario debe escribir la comunidad Autonoma que quiere viajar, estan
+		// disponibles Andalucía, Canarias, Madrid y Extremadura
 		System.out.println("---ORGANIZA TU VIAJE--- \n¿En que parte de España quieres viajar? (Comunidad Autonoma)");
 		this.comunidad = sc.nextLine();
 
@@ -56,6 +59,8 @@ public class menu_viajes extends Usuario {
 			destino = sc.nextInt();
 		}
 
+		// Si el usuario no escribe una comunidad autonoma de las anteriores dara un
+		// aviso de que aún no estan disponibles
 		else {
 			System.err.println("Lo sentimos no hay viajes en " + comunidad + " disponibles...");
 		}
@@ -65,7 +70,8 @@ public class menu_viajes extends Usuario {
 	public void menuFecha() {
 
 		sc.nextLine();
-
+		// El usuario escribira por pantalla el mes, la fecha de entrada y de salida por
+		// ejemplo "Octubre" / "1" / "10"
 		System.out.print("¡Perfecto! Vamos a elegir fechas para tu estancia: \nIntroduce en que mes vas a viajar: ");
 		String mes = sc.nextLine();
 
@@ -76,6 +82,9 @@ public class menu_viajes extends Usuario {
 		int diaVuelta = sc.nextInt();
 
 		System.out.println();
+
+		// Saldrá por pantalla los datos de el nombre del destino, el mes la fecha de
+		// ida y la de vuelta
 		System.out.println("¡Ya hemos organizado tu viaje! \nViaje a " + this.destino + " en el mes de " + mes
 				+ ", desde el dia " + diaIda + " hasta el dia " + diaVuelta);
 		System.out.println();
@@ -85,18 +94,24 @@ public class menu_viajes extends Usuario {
 
 		System.out.println("---RECOMENDACIONES---");
 		System.out.println("Para recomedarte el mejor destino para ti, necesitamos hacerte algunas preguntas");
+
+		// El usuario elige entre 1 o 2 y según su opcion saldra por pantalla algo
+		// distinto
 		System.out.println("¿Prefieres un destino con playa?\n(1)Si \n(2)No");
 		playa = Integer.parseInt(sc.nextLine());
 		System.out.println("¿Prefieres un destino en la peninsula?\n(1)Si \n(2)No");
 		this.destino = Integer.parseInt(sc.nextLine());
 
+		// Resultado de las diferentes opciones
 		if (playa == 1 && destino == 1) {
-			System.out.println("La mejor opcion para ti, es un viaje a Andalucía. \nPara organizar tu viaje pulsa la opcion Viajar");
+			System.out.println(
+					"La mejor opcion para ti, es un viaje a Andalucía. \nPara organizar tu viaje pulsa la opcion Viajar");
 			System.out.println();
 		}
 
 		else if (playa == 1 && destino == 2) {
-			System.out.println("La mejor opcion para ti, es un viaje a Canarias. \nPara organizar tu viaje pulsa la opcion Viajar");
+			System.out.println(
+					"La mejor opcion para ti, es un viaje a Canarias. \nPara organizar tu viaje pulsa la opcion Viajar");
 			System.out.println();
 
 		}
@@ -105,10 +120,12 @@ public class menu_viajes extends Usuario {
 			System.out.println("¿Prefieres un destino en la capital?\n(1)Si \n(2)No");
 			int peninsula = Integer.parseInt(sc.nextLine());
 			if (peninsula == 1) {
-				System.out.println("La mejor opcion para ti, es un viaje a Madrid. \nPara organizar tu viaje pulsa la opcion Viajar");
+				System.out.println(
+						"La mejor opcion para ti, es un viaje a Madrid. \nPara organizar tu viaje pulsa la opcion Viajar");
 				System.out.println();
 			} else if (peninsula == 2) {
-				System.out.println("La mejor opcion para ti, es un viaje a Extremadura. \nPara organizar tu viaje pulsa la opcion Viajar");
+				System.out.println(
+						"La mejor opcion para ti, es un viaje a Extremadura. \nPara organizar tu viaje pulsa la opcion Viajar");
 				System.out.println();
 
 			}
