@@ -1,0 +1,35 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class EditarFichero extends Usuario {
+	
+	public EditarFichero() {
+		
+	}
+
+	public void InsertarDatos() {
+
+		BufferedWriter out = null;
+
+		try {
+			out = new BufferedWriter(new FileWriter("C:\\Users\\garramiola.rebor\\Desktop\\SesionesRegistradas.txt"));
+
+			for (int i = 0; i < arrayUsuarios.length; i++) {
+				out.write(super.arrayUsuarios[i].nombre + " " +super.arrayUsuarios[i].apellidos + " DNI: " + super.arrayUsuarios[i].DNI + " EDAD: " + super.arrayUsuarios[i].edad + "\n");
+			}
+
+		} catch (IOException ex) {
+			System.out.println(ex.getMessage());
+
+		} finally {
+			if (out != null) {
+				try {
+					out.close();
+				} catch (IOException ex) {
+					System.out.println(ex);
+				}
+			}
+		}
+	}
+}
