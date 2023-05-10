@@ -1,0 +1,15 @@
+
+public abstract class Menu extends Usuario {
+	
+	public abstract void MenuInicio();
+	
+	public abstract void MenuViajes();
+		
+	public abstract void menuDestino();
+	
+	public abstract void menuFecha();
+	
+	public abstract void menuRecomendaciones();
+	
+	public abstract void menuSorteo();
+}
