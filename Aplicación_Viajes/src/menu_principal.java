@@ -17,7 +17,7 @@ public class menu_principal {
 		
 	}
 	
-	public void Menu() {
+	public void Menu() { // METODO
 		
 		
 		System.out.print("------MENÚ INICIO------" + "\n1. Registrar Nuevo Usuario." + "\n2. Iniciar Sesión."
@@ -25,7 +25,7 @@ public class menu_principal {
 		this.opcion1 = sc.nextInt();
 	}
 	
-	public void MenuViajes() {
+	public void MenuViajes() { // METODO
 		
 		System.out.print("¡Hola! " + nombre + " elige una de nuestras opciones: "
 				+ " \n(1)-Viajar \n(2)-Recomendaciones \n(3)-Sorteo \n(4)-Salir" + "\n\nEscoja una opción:  ");
