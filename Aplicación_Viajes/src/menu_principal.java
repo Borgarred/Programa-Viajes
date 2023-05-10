@@ -1,3 +1,5 @@
+package Aplicacion_Viajes;
+
 import java.util.Scanner;
 
 public class menu_principal {
@@ -8,8 +10,8 @@ public class menu_principal {
 	protected String apellidos;
 	protected String DNI;
 	protected int edad;
-	int opcion1;
-	int opcion2;
+	protected int opcion1;
+	protected int opcion2;
 	
 	public menu_principal() {
 		
@@ -26,7 +28,7 @@ public class menu_principal {
 	public void MenuViajes() {
 		
 		System.out.print("¡Hola! " + nombre + " elige una de nuestras opciones: "
-				+ " \n(1)-Viajar \n(2)-Recomendaciones \n(3)-Sorteo" + "\n\nEscoja una opción: ");
+				+ " \n(1)-Viajar \n(2)-Recomendaciones \n(3)-Sorteo \n(4)-Salir" + "\n\nEscoja una opción:  ");
 		this.opcion2 = sc.nextInt();
 		
 		
