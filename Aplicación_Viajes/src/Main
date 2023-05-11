@@ -1,29 +1,36 @@
+package Aplicacion_Viajes;
+
 import java.util.Scanner;
 
 public class Main {
-	
+
 	public static void main(String[] args) {
-		
+
 		menu_principal Menu1 = new menu_principal();
 		Usuario usuario0 = new Usuario(); // quitados los argumentos
 		menu_viajes viajes = new menu_viajes();
 
 		int indice_usuario = 0;
-
-		boolean salir = false, salir1 = false, salir2 = false;
+		boolean salir = false, salir1 = false, salir2 = false, salir3 = false;
+		;
 
 		while (salir == false) {
 			Menu1.MenuInicio();
-			
+			if (Menu1.opcion1 != 1 && Menu1.opcion1 != 2) {
+				System.err.println("Elige una opción correcta \n");
+			}
+
 			switch (Menu1.opcion1) {
-			
+
 			case 1: {
+
 				usuario0.NuevoUsuario();
 				usuario0.ListaUsuarios();
 				System.out.println();
 				break;
+
 			}
-			
+
 			case 2: {
 
 				indice_usuario = usuario0.IniciarSesion();
@@ -43,11 +50,16 @@ public class Main {
 			if (Menu1.opcion2 == 4) {
 				break;
 			}
-			Menu1.MenuViajes(indice_usuario ,usuario0);
+			Menu1.MenuViajes(indice_usuario, usuario0);
 			System.out.println();
+			if (Menu1.opcion2 < 1 || Menu1.opcion2 > 4) {
+				System.err.println("Introduzca una opción valida");
 
+			}
 			switch (Menu1.opcion2) {
+
 			case 1: {
+
 				viajes.menuDestino();
 				viajes.menuFecha();
 				break;
