@@ -1,6 +1,6 @@
 package Aplicacion_Viajes;
 
-
+//HERENCIA
 public class menu_principal extends Usuario {
 
 	int opcion1;
@@ -13,6 +13,7 @@ public class menu_principal extends Usuario {
 		super(nombre, apellidos, DNI, edad);
 	}
 
+	
 	public void MenuInicio() { // METODO
 
 		System.out.print("------MENÚ INICIO------" + "\n1. Registrar Nuevo Usuario." + "\n2. Iniciar Sesión."
