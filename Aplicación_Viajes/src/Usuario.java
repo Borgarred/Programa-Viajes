@@ -4,8 +4,10 @@ import java.util.Scanner;
 
 public class Usuario {
 
+	//Creamos un array con longitud 20
 	DatosUsuario arrayUsuarios[] = new DatosUsuario[20];
 	
+	//Abrimos escaner y definimos atributos
 	Scanner sc = new Scanner(System.in);
 	protected String nombre;
 	protected String apellidos;
@@ -13,10 +15,7 @@ public class Usuario {
 	protected int edad;
 
 	int numeroUsuarios = 0;
-	
-	public void Hola() {
-		System.out.println("Hola");
-	}
+
 
  	public Usuario() {
 
