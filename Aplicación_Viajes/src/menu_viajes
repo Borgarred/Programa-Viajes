@@ -1,3 +1,5 @@
+package Aplicacion_Viajes;
+
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
@@ -14,6 +16,7 @@ public class menu_viajes extends Usuario {
 	String comunidad;
 	int destino;
 	int playa;
+	public int numeroRegalo;
 
 	public menu_viajes() {
 	} // JLF quitados los argumentos de la inicializacion del método
@@ -148,9 +151,9 @@ public class menu_viajes extends Usuario {
 		System.out.println(pila);
 
 		System.out.println("Elige un regalo del 1 al 3: ");
-		int n = sc.nextInt();
+		int numeroRegalo = sc.nextInt();
 
-		switch (n) {
+		switch (numeroRegalo) {
 		case 1: {
 			// Eliminar un elemento de la pila
 			String eliminado = pila.pop();
