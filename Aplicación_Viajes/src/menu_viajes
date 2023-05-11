@@ -1,9 +1,11 @@
+package Aplicacion_Viajes;
+
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class menu_viajes extends Menu {
+public class menu_viajes extends Usuario {
 
 	Scanner sc = new Scanner(System.in);
 	protected Usuario usuario;
@@ -15,8 +17,8 @@ public class menu_viajes extends Menu {
 	int destino;
 	int playa;
 
-	public menu_viajes(Usuario usuario) {
-	}
+	public menu_viajes() {
+	} //JLF quitados los argumentos de la inicializacion del método
 
 	public void menuDestino() {
 
@@ -167,16 +169,5 @@ public class menu_viajes extends Menu {
 		}
 	}
 
-	@Override
-	public void MenuInicio() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void MenuViajes() {
-		// TODO Auto-generated method stub
-		
-	}
 
 }
