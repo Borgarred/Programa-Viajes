@@ -1,86 +1,66 @@
 package Aplicacion_Viajes;
-
 import java.util.Scanner;
 
 public class Main {
-
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-		Scanner sc = new Scanner(System.in);
-
 		menu_principal Menu1 = new menu_principal();
-		Usuario usuario0 = new Usuario(null, null, null, 0);
-		menu_viajes viajes = new menu_viajes(usuario0);
-
-		boolean salir = false;
-		boolean salir1 = false;
-		boolean salir2 = false;
+		Usuario usuario0 = new Usuario(); //quitados los argumentos
+		
+		menu_viajes viajes = new menu_viajes();
+		
+		int indice_usuario = 0;
+		
+		boolean salir = false, salir1=false, salir2=false;
 
 		while (salir == false) {
-			Menu1.Menu();
-
+			Menu1.MenuInicio();
 			switch (Menu1.opcion1) {
-
-			case 1: {
-
-				usuario0.NuevoUsuario();
-				System.out.println();
-				break;
-			}
-
-			case 2: {
-
-				while (salir1 == false) {
-					try {
-
-						usuario0.IniciarSesion();
-						salir = true;
-						salir1 = true;
-
-					} catch (Exception e) {
-						System.err.println("USUARIO NO REGISTRADO");
-						System.out.println();
-						break;
-					}
+				case 1: {
+					usuario0.NuevoUsuario();
+					System.out.println();
+					break;
+				}
+				case 2: {
+							
+						indice_usuario = usuario0.IniciarSesion();
+							
+						if (indice_usuario == -1) {
+							System.err.println("USUARIO NO REGISTRADO");		
+						}
+						else {
+							salir = true;
+						}
 				}
 			}
-			}
-
 		}
-		
 		System.out.println();
+		
 		while (salir2 == false) {
-			if (Menu1.opcion2 == 4){
+			if (Menu1.opcion2 == 4) {
 				break;
 			}
-			Menu1.MenuViajes();
+			Menu1.MenuViajes(indice_usuario, usuario0);
 
 			switch (Menu1.opcion2) {
-
-			case 1: {
-				viajes.menuDestino(usuario0.nombre);
-				viajes.menuFecha();
-				break;
-			}
-
-			case 2: {
-				viajes.menuRecomendaciones();
-				break;
-			}
-
-			case 3: {
-				viajes.menuSorteo();
-				break;
-			}
-			case 4:{
-				System.out.println("¡Gracias por visitarnos, hasta pronto!");
-				break;
-			
-			}
+				case 1: {
+					viajes.menuDestino();
+					viajes.menuFecha();
+					break;
+				}
+				case 2: {
+					viajes.menuRecomendaciones();
+					break;
+				}
+				case 3: {
+					viajes.menuSorteo();
+					break;
+				}
+				case 4: {
+					System.out.println("¡Gracias por visitarnos, hasta pronto!");
+					salir2 = true;
+					break;
+				}
 			}
 		}
-
 	}
-
 }
