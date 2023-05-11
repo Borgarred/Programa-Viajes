@@ -1,26 +1,27 @@
-package Aplicacion_Viajes;
-import java.util.Scanner;
-
 public class DatosUsuario {
 
-	public String nombre;
-	public String apellidos;
-	public String DNI;
-	public int edad;
+	protected String email;
+    protected String contraseña;
+    protected String nombre;
+    protected String apellidos;
+    protected String DNI;
+    protected int edad;
 	
 	public DatosUsuario() {
 		
 	}
 	
-	public DatosUsuario(String nombre, String apellidos, String DNI, int edad) {
-		this.nombre = nombre;
-		this.apellidos = apellidos;
-		this.DNI = DNI;
-		this.edad = edad;
-	}
+	public DatosUsuario(String email, String contraseña, String nombre, String apellidos, String DNI, int edad) {
+    	this.email = email;
+    	this.contraseña = contraseña;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.DNI = DNI;
+        this.edad = edad;
+    }
 	
-	public String getNombre() {
-		return this.nombre;
-	}
+    public String getNombre() {
+        return this.nombre;
+    }
 
 }
