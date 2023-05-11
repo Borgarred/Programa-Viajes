@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Main {
 	public static void main(String[] args) {
 		menu_principal Menu1 = new menu_principal();
-		Usuario usuario0 = new Usuario(); //quitados los argumentos
+		Usuario usuario0 = new Usuario(); //Sin argumentos
 		
 		menu_viajes viajes = new menu_viajes();
 		
@@ -25,6 +25,7 @@ public class Main {
 						indice_usuario = usuario0.IniciarSesion();
 							
 						if (indice_usuario == -1) {
+							//Aviso de que no está registrado ese usuario
 							System.err.println("USUARIO NO REGISTRADO");		
 						}
 						else {
@@ -36,11 +37,13 @@ public class Main {
 		System.out.println();
 		
 		while (salir2 == false) {
+			//Si el numero introducido es 4 deberá salir de la aplicación
 			if (Menu1.opcion2 == 4) {
 				break;
 			}
 			Menu1.MenuViajes(indice_usuario, usuario0);
-
+			
+			//Switch de la aplicacion completa con los metodos que deberán salir
 			switch (Menu1.opcion2) {
 				case 1: {
 					viajes.menuDestino();
