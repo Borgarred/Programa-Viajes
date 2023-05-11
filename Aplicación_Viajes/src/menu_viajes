@@ -5,8 +5,10 @@ import java.util.Queue;
 import java.util.Scanner;
 import java.util.Stack;
 
+//HERENCIA
 public class menu_viajes extends Usuario {
 
+	//Atributos e abrimos scanner
 	Scanner sc = new Scanner(System.in);
 	protected Usuario usuario;
 	protected int tipo;
@@ -18,7 +20,7 @@ public class menu_viajes extends Usuario {
 	int playa;
 
 	public menu_viajes() {
-	} //JLF quitados los argumentos de la inicializacion del método
+	} //Quitamos los argumentos de la inicializacion del método
 
 	public void menuDestino() {
 
