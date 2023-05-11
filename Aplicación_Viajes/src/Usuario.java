@@ -1,14 +1,12 @@
-package Aplicacion_Viajes;
 import java.util.Scanner;
-
 
 public class Usuario {
 
-	//Creamos un array con longitud 20
 	DatosUsuario arrayUsuarios[] = new DatosUsuario[20];
-	
-	//Abrimos escaner y definimos atributos
+
 	Scanner sc = new Scanner(System.in);
+	protected String email;
+	protected String contraseña;
 	protected String nombre;
 	protected String apellidos;
 	protected String DNI;
@@ -16,85 +14,95 @@ public class Usuario {
 
 	int numeroUsuarios = 0;
 
-
- 	public Usuario() {
+	public Usuario() {
 
 	}
 
-	public Usuario(String nombre, String apellidos, String DNI, int edad) {
-		this.nombre = nombre;
-		this.apellidos = apellidos;
-		this.DNI = DNI;
-		this.edad = edad;
-	}
+	public Usuario(String email, String contraseña, String nombre, String apellidos, String DNI, int edad) {
+    	this.email = email;
+    	this.contraseña = contraseña;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.DNI = DNI;
+        this.edad = edad;
+    }
 
 	public void NuevoUsuario() {
-		
+
 		int indice = 0;
-		
+
 		// Indice del último registro existente
-		for (int i = 19 ; i >= 0; i--) {
+		for (int i = 19; i >= 0; i--) {
 			if (this.arrayUsuarios[i] == null) {
-				indice = i ;
+				indice = i;
 			}
 		}
-		
-		System.out.print("Introduzca su nombre: ");
-		String nombre = sc.nextLine();
 
-		System.out.print("Introduzca sus apellidos: ");
-		String apellidos = sc.nextLine();
+		System.out.print("Introduzca un email: ");
+        String email = sc.nextLine();
 
-		System.out.print("Introduzca su DNI: ");
-		String DNI = sc.nextLine();
+        System.out.print("Inserte una contraseña: ");
+        String contraseña = sc.nextLine();
 
-		System.out.print("Introduzca su edad: ");
-		int edad = sc.nextInt();
+        System.out.print("Introduzca su nombre: ");
+        String nombre = sc.nextLine();
 
-		sc.nextLine();
+        System.out.print("Introduzca sus apellidos: ");
+        String apellidos = sc.nextLine();
 
-		System.out.println();
+        System.out.print("Introduzca su DNI: ");
+        String DNI = sc.nextLine();
 
-		this.arrayUsuarios[indice] = new DatosUsuario(nombre, apellidos, DNI, edad);
+        System.out.print("Introduzca su edad: ");
+        int edad = sc.nextInt();
+
+        sc.nextLine();
+
+        System.out.println();
+
+		this.arrayUsuarios[indice] = new DatosUsuario(email, contraseña, nombre, apellidos, DNI, edad);
+		numeroUsuarios = numeroUsuarios + 1;
 	}
 
 	public void ListaUsuarios() {
 
-		int i = 0;
+        int i = 0;
 
-		System.out.println("--------Lista de alumnos:--------");
-		while (i < numeroUsuarios) {
-			System.out.println(i + 1 + "º. " + arrayUsuarios[i].nombre + " " + arrayUsuarios[i].apellidos);
-			i = i + 1;
-		}
-	}
-	
+        System.out.println("--------Lista de usuarios:--------");
+        while (i < numeroUsuarios) {
+            System.out.println(i + 1 + "º. " + arrayUsuarios[i].nombre + " " + arrayUsuarios[i].apellidos);
+            i = i + 1;
+        }
+    }
+
 	public int IniciarSesion() {
 
 		int indice = 0;
-		System.out.print("Introduzca su nombre: ");
-		String nombre = sc.nextLine();
 
-		System.out.print("Introduzca sus apellidos: ");
-		String apellidos = sc.nextLine();
+		System.out.print("Introduzca su email: ");
+		String email = sc.nextLine();
+
+		System.out.print("Introduzca sus contraseña: ");
+		String contraseña = sc.nextLine();
+
 		boolean salir = false;
-		
-		for (int i = 0; i < arrayUsuarios.length; i++)
-		{
-			if(arrayUsuarios[i] != null) {
-				if (arrayUsuarios[i].nombre.equals(nombre) && arrayUsuarios[i].apellidos.equals(apellidos)) {
-					this.nombre = nombre;
-					this.apellidos = apellidos;
-					System.out.println("¡Has iniciado sesión con " + nombre + " " + apellidos + "!");
+
+		for (int i = 0; i < arrayUsuarios.length; i++) {
+			if (arrayUsuarios[i] != null) {
+				if (arrayUsuarios[i].email.equals(email) && arrayUsuarios[i].contraseña.equals(contraseña)) {
+					this.email = email;
+					this.contraseña = contraseña;
+					System.out.println("¡Has iniciado sesión con " + arrayUsuarios[i].nombre + " " + arrayUsuarios[i].apellidos + "!");
 					salir = true;
 					indice = i;
-				} 
+				}
 			}
 		}
-		
+
 		if (salir == false) {
 			indice = -1;
 		}
 		return indice;
 	}
-}                                                                                                                                        
+
+}
