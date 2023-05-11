@@ -1,13 +1,16 @@
-import java.util.Scanner;
+package Aplicacion_Viajes;
 
-public class menu_principal extends Menu {
 
-	Scanner sc = new Scanner(System.in);
-	protected int opcion1;
-	protected int opcion2;
+public class menu_principal extends Usuario {
+
+	int opcion1;
+	int opcion2;
 
 	public menu_principal() {
+	}
 
+	public menu_principal(String nombre, String apellidos, String DNI, int edad) {
+		super(nombre, apellidos, DNI, edad);
 	}
 
 	public void MenuInicio() { // METODO
@@ -17,36 +20,12 @@ public class menu_principal extends Menu {
 		this.opcion1 = sc.nextInt();
 	}
 
-	public void MenuViajes() { // METODO
+	public void MenuViajes(int indice, Usuario user) { // METODO
 
-		System.out.print("¡Hola! " + super.nombre + " elige una de nuestras opciones: "
+		System.out.print("¡Hola! " + user.arrayUsuarios[indice].getNombre() + " elige una de nuestras opciones: "
 				+ " \n(1)-Viajar \n(2)-Recomendaciones \n(3)-Sorteo \n(4)-Salir" + "\n\nEscoja una opción:  ");
 		this.opcion2 = sc.nextInt();
-
 	}
-
-	@Override
-	public void menuDestino() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void menuFecha() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void menuRecomendaciones() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void menuSorteo() {
-		// TODO Auto-generated method stub
-		
-	}
-
+	
+	
 }
