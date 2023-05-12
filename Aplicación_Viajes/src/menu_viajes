@@ -61,6 +61,7 @@ public class menu_viajes extends Usuario {
 		else {
 			System.out.println();
 			System.err.println("Lo sentimos no hay viajes en " + comunidad + " disponibles...");
+
 		}
 
 	}
@@ -127,6 +128,10 @@ public class menu_viajes extends Usuario {
 		else if (playa == 2 && destino == 2) {
 			System.err.println("Lo sentimos no hay viajes disponibles sin playa y fuera de la peninsula...");
 			System.out.println();
+		} else {
+		
+			System.err.println("Por favor introduce una opción correcta");
+			
 		}
 	}
 
