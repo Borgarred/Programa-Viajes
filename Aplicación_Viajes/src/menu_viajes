@@ -22,21 +22,21 @@ public class menu_viajes extends Usuario {
 
 	public void menuDestino() {
 
-		Scanner sc = new Scanner(System.in);
+		Scanner escaner1 = new Scanner(System.in);
 
 		boolean salir = false;
 		while (salir == false) {
 
 			System.out
 					.println("---ORGANIZA TU VIAJE--- \n¿En que parte de España quieres viajar? (Comunidad Autonoma)");
-			this.comunidad = sc.nextLine();
+			this.comunidad = escaner1.nextLine();
 
 			if (comunidad.equals("Andalucía")) {
 				System.out.println();
 				System.out.print("--OPCIONES PARA VIAJAR EN ANDALUCIA--"
 						+ "\nPara el destino Andalucia tenemos viajes a Cadiz o Córdoba"
 						+ "\n¿Qué destino prefieres? \n(1)Cadiz \n(2)Córdoba \nOpción: ");
-				destino = sc.nextInt();
+				destino = escaner1.nextInt();
 				salir = true;
 			}
 
@@ -45,7 +45,7 @@ public class menu_viajes extends Usuario {
 				System.out.print("--OPCIONES PARA VIAJAR EN CANARIAS--"
 						+ "\nPara el destino Canarias tenemos viajes a Tenerife o La Palma"
 						+ "\n¿Qué destino prefieres? \n(1)Tenerife \n(2)La Palma \nOpción: ");
-				destino = sc.nextInt();
+				destino = escaner1.nextInt();
 				salir = true;
 			}
 
@@ -54,7 +54,7 @@ public class menu_viajes extends Usuario {
 				System.out.print("--OPCIONES PARA VIAJAR EN MADRID--"
 						+ "Para el destino Madrid tenemos viajes a Madrid Capital o Getafe"
 						+ "\n¿Qué destino prefieres? \n(1)Madrid Capital \n(2)Getafe \nOpción: ");
-				destino = sc.nextInt();
+				destino = escaner1.nextInt();
 				salir = true;
 			}
 
@@ -63,7 +63,7 @@ public class menu_viajes extends Usuario {
 				System.out.print("--OPCIONES PARA VIAJAR EN EXTREMADURA--"
 						+ "\nPara el destino Extremadura tenemos viajes a Cáceres o Badajoz"
 						+ "\n¿Qué destino prefieres? \n(1)Cáceres \n(2)Badajoz \nOpción: ");
-				destino = sc.nextInt();
+				destino = escaner1.nextInt();
 				salir = true;
 			}
 
@@ -73,22 +73,22 @@ public class menu_viajes extends Usuario {
 
 			}
 		}
-		sc.close();
+		
 	}
 
 	public void menuFecha() {
 
-		Scanner sc = new Scanner(System.in);
+		Scanner escaner2 = new Scanner(System.in);
 
 		System.out.println();
 		System.out.print("¡Perfecto! Vamos a elegir fechas para tu estancia: \nIntroduce en que mes vas a viajar: ");
-		String mes = sc.nextLine();
+		String mes = escaner2.nextLine();
 
 		System.out.print("Selecciona la fecha de entrada: ");
-		int diaIda = sc.nextInt();
+		int diaIda = escaner2.nextInt();
 
 		System.out.print("Selecciona la fecha de salida: ");
-		int diaVuelta = sc.nextInt();
+		int diaVuelta = escaner2.nextInt();
 
 		System.out.println();
 		System.out.println("¡Ya hemos organizado tu viaje! \nViaje a " + this.destino + " en el mes de " + mes
@@ -98,15 +98,15 @@ public class menu_viajes extends Usuario {
 
 	public void menuRecomendaciones() {
 
-		Scanner sc = new Scanner(System.in);
+		Scanner escaner3 = new Scanner(System.in);
 
 		System.out.print("---RECOMENDACIONES---"
 				+ "\nPara recomedarte el mejor destino para ti, necesitamos hacerte algunas preguntas"
 				+ "¿Prefieres un destino con playa?\n(1)Si \n(2)No \nOpción: ");
-		playa = sc.nextInt();
+		playa = escaner3.nextInt();
 		System.out.println();
 		System.out.print("¿Prefieres un destino en la peninsula?\n(1)Si \n(2)No \nOpción:");
-		this.destino = sc.nextInt();
+		this.destino = escaner3.nextInt();
 		System.out.println();
 
 		if (playa == 1 && destino == 1) {
@@ -124,7 +124,7 @@ public class menu_viajes extends Usuario {
 
 		else if (playa == 2 && destino == 1) {
 			System.out.println("¿Prefieres un destino en la capital?\n(1)Si \n(2)No \nOpción: ");
-			int peninsula = sc.nextInt();
+			int peninsula = escaner3.nextInt();
 			System.out.println();
 			if (peninsula == 1) {
 				System.out.println(
@@ -150,7 +150,7 @@ public class menu_viajes extends Usuario {
 
 	public void menuSorteo() {
 
-		Scanner sc = new Scanner(System.in);
+		Scanner escaner4 = new Scanner(System.in);
 
 		Stack<String> pila = new Stack<>();
 
@@ -171,7 +171,7 @@ public class menu_viajes extends Usuario {
 		System.out.println(pila);
 
 		System.out.println("Elige un regalo del 1 al 3: ");
-		int numeroRegalo = sc.nextInt();
+		int numeroRegalo = escaner4.nextInt();
 
 		switch (numeroRegalo) {
 		case 1: {
@@ -179,7 +179,7 @@ public class menu_viajes extends Usuario {
 			String eliminado = pila.pop();
 			System.out.println("¡FELICIDADES! \nERES EL GANADOR DEL VIAJE A MALLORCA");
 			System.out.println("Introduce tu email para enviarte proximamente todos los datos: ");
-			String email = sc.nextLine();
+			String email = escaner4.nextLine();
 			System.out.println("¡Perfecto, espera nuestra respuesta pronto!");
 			System.out.println();
 			break;
