@@ -1,4 +1,5 @@
-package aplicacion_viajes;
+package Aplicacion_Viajes;
+
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -150,7 +151,7 @@ public class menu_viajes extends Usuario {
 
 	public void menuSorteo() {
 
-		Scanner escaner4 = new Scanner(System.in);
+		Scanner sc = new Scanner(System.in);
 
 		Stack<String> pila = new Stack<>();
 
@@ -171,15 +172,15 @@ public class menu_viajes extends Usuario {
 		System.out.println(pila);
 
 		System.out.println("Elige un regalo del 1 al 3: ");
-		int numeroRegalo = escaner4.nextInt();
-
+		int numeroRegalo = sc.nextInt();
+		if (numeroRegalo ==1 || numeroRegalo ==2 || numeroRegalo == 3) {
 		switch (numeroRegalo) {
 		case 1: {
 			// Eliminar un elemento de la pila
 			String eliminado = pila.pop();
 			System.out.println("¡FELICIDADES! \nERES EL GANADOR DEL VIAJE A MALLORCA");
 			System.out.println("Introduce tu email para enviarte proximamente todos los datos: ");
-			String email = escaner4.nextLine();
+			String email = sc.nextLine();
 			System.out.println("¡Perfecto, espera nuestra respuesta pronto!");
 			System.out.println();
 			break;
@@ -196,6 +197,11 @@ public class menu_viajes extends Usuario {
 
 			break;
 		}
+		
+		}}
+		else {
+			System.err.println("Elige un regalo entre el 1 al 3");
+			System.out.println();
 		}
 	}
 
