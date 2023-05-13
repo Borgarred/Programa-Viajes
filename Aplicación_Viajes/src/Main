@@ -12,7 +12,8 @@ public class Main {
 
 		int indice_usuario = 0;
 		boolean salir = false, salir1 = false, salir2 = false, salir3 = false;
-		;
+		
+		try {
 
 		while (salir == false) {
 			Menu1.MenuInicio();
@@ -43,6 +44,10 @@ public class Main {
 				}
 			}
 			}
+		}
+		}catch(Exception e) {
+			System.out.println();
+			System.err.println("No puedes introducir letras, solo un numero");
 		}
 		System.out.println();
 
