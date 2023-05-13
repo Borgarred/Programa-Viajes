@@ -1,4 +1,4 @@
-package Aplicacion_Viajes;
+package aplicacion_viajes;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -7,7 +7,6 @@ import java.util.Stack;
 
 public class menu_viajes extends Usuario {
 
-	Scanner sc = new Scanner(System.in);
 	protected Usuario usuario;
 	protected int tipo;
 	String nombreHotel;
@@ -23,52 +22,64 @@ public class menu_viajes extends Usuario {
 
 	public void menuDestino() {
 
-		System.out.println("---ORGANIZA TU VIAJE--- \n¿En que parte de España quieres viajar? (Comunidad Autonoma)");
-		this.comunidad = sc.nextLine();
+		Scanner sc = new Scanner(System.in);
 
-		if (comunidad.equals("Andalucía")) {
-			System.out.println();
-			System.out.print("--OPCIONES PARA VIAJAR EN ANDALUCIA--"
-					+ "\nPara el destino Andalucia tenemos viajes a Cadiz o Córdoba"
-					+ "\n¿Qué destino prefieres? \n(1)Cadiz \n(2)Córdoba \nOpción: ");
-			destino = sc.nextInt();
+		boolean salir = false;
+		while (salir == false) {
+
+			System.out
+					.println("---ORGANIZA TU VIAJE--- \n¿En que parte de España quieres viajar? (Comunidad Autonoma)");
+			this.comunidad = sc.nextLine();
+
+			if (comunidad.equals("Andalucía")) {
+				System.out.println();
+				System.out.print("--OPCIONES PARA VIAJAR EN ANDALUCIA--"
+						+ "\nPara el destino Andalucia tenemos viajes a Cadiz o Córdoba"
+						+ "\n¿Qué destino prefieres? \n(1)Cadiz \n(2)Córdoba \nOpción: ");
+				destino = sc.nextInt();
+				salir = true;
+			}
+
+			else if (comunidad.equals("Canarias")) {
+				System.out.println();
+				System.out.print("--OPCIONES PARA VIAJAR EN CANARIAS--"
+						+ "\nPara el destino Canarias tenemos viajes a Tenerife o La Palma"
+						+ "\n¿Qué destino prefieres? \n(1)Tenerife \n(2)La Palma \nOpción: ");
+				destino = sc.nextInt();
+				salir = true;
+			}
+
+			else if (comunidad.equals("Madrid")) {
+				System.out.println();
+				System.out.print("--OPCIONES PARA VIAJAR EN MADRID--"
+						+ "Para el destino Madrid tenemos viajes a Madrid Capital o Getafe"
+						+ "\n¿Qué destino prefieres? \n(1)Madrid Capital \n(2)Getafe \nOpción: ");
+				destino = sc.nextInt();
+				salir = true;
+			}
+
+			else if (comunidad.equals("Extremadura")) {
+				System.out.println();
+				System.out.print("--OPCIONES PARA VIAJAR EN EXTREMADURA--"
+						+ "\nPara el destino Extremadura tenemos viajes a Cáceres o Badajoz"
+						+ "\n¿Qué destino prefieres? \n(1)Cáceres \n(2)Badajoz \nOpción: ");
+				destino = sc.nextInt();
+				salir = true;
+			}
+
+			else {
+				System.err.println("Lo sentimos no hay viajes en " + comunidad + " disponibles...");
+				System.out.println();
+
+			}
 		}
-
-		else if (comunidad.equals("Canarias")) {
-			System.out.println();
-			System.out.print("--OPCIONES PARA VIAJAR EN CANARIAS--"
-					+ "\nPara el destino Canarias tenemos viajes a Tenerife o La Palma"
-					+ "\n¿Qué destino prefieres? \n(1)Tenerife \n(2)La Palma \nOpción: ");
-			destino = sc.nextInt();
-		}
-
-		else if (comunidad.equals("Madrid")) {
-			System.out.println();
-			System.out.print("--OPCIONES PARA VIAJAR EN MADRID--"
-					+ "Para el destino Madrid tenemos viajes a Madrid Capital o Getafe"
-					+ "\n¿Qué destino prefieres? \n(1)Madrid Capital \n(2)Getafe \nOpción: ");
-			destino = sc.nextInt();
-		}
-
-		else if (comunidad.equals("Extremadura")) {
-			System.out.println();
-			System.out.print("--OPCIONES PARA VIAJAR EN EXTREMADURA--"
-					+ "\nPara el destino Extremadura tenemos viajes a Cáceres o Badajoz"
-					+ "\n¿Qué destino prefieres? \n(1)Cáceres \n(2)Badajoz \nOpción: ");
-			destino = sc.nextInt();
-		}
-
-		else {
-			System.out.println();
-			System.err.println("Lo sentimos no hay viajes en " + comunidad + " disponibles...");
-
-		}
-
+		sc.close();
 	}
 
 	public void menuFecha() {
 
-		sc.nextLine();
+		Scanner sc = new Scanner(System.in);
+
 		System.out.println();
 		System.out.print("¡Perfecto! Vamos a elegir fechas para tu estancia: \nIntroduce en que mes vas a viajar: ");
 		String mes = sc.nextLine();
@@ -86,6 +97,8 @@ public class menu_viajes extends Usuario {
 	}
 
 	public void menuRecomendaciones() {
+
+		Scanner sc = new Scanner(System.in);
 
 		System.out.print("---RECOMENDACIONES---"
 				+ "\nPara recomedarte el mejor destino para ti, necesitamos hacerte algunas preguntas"
@@ -129,13 +142,15 @@ public class menu_viajes extends Usuario {
 			System.err.println("Lo sentimos no hay viajes disponibles sin playa y fuera de la peninsula...");
 			System.out.println();
 		} else {
-		
+
 			System.err.println("Por favor introduce una opción correcta");
-			
+
 		}
 	}
 
 	public void menuSorteo() {
+
+		Scanner sc = new Scanner(System.in);
 
 		Stack<String> pila = new Stack<>();
 
