@@ -1,3 +1,7 @@
+package aplicacion_viajes;
+
+import java.util.Scanner;
+
 public class menu_principal extends Usuario {
 
 	int opcion1;
@@ -11,17 +15,22 @@ public class menu_principal extends Usuario {
 	}
 
 	public void MenuInicio() { // METODO
+		
+		Scanner escaner1 = new Scanner(System.in);
 
 		System.out.print("------MENÚ INICIO------" + "\n1. Registrar Nuevo Usuario." + "\n2. Iniciar Sesión."
 				+ "\n\nEscoja una opción: ");
-		this.opcion1 = sc.nextInt();
+		this.opcion1 = escaner1.nextInt();
 	}
 
 	public void MenuViajes(int indice, Usuario user) { // METODO
+		
+		Scanner escaner2 = new Scanner(System.in);
 
 		System.out.print("¡Hola! " + user.arrayUsuarios[indice].getNombre() + " elige una de nuestras opciones: "
 				+ " \n(1)-Viajar \n(2)-Recomendaciones \n(3)-Sorteo \n(4)-Salir" + "\n\nEscoja una opción: ");
-		this.opcion2 = sc.nextInt();
+		this.opcion2 = escaner2.nextInt();
+
 	}
 	
 
