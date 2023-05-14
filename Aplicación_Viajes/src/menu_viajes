@@ -35,40 +35,48 @@ public class menu_viajes extends Usuario {
 					+ "\nPara el destino Andalucía tenemos viajes a Cadiz o Córdoba"
 					+ "\n¿Qué destino prefieres? \n(1)Cadiz \n(2)Córdoba \nOpción: ");
 			destino = escaner1.nextInt();
+
 			if (destino != 1 && destino != 2) {
 				System.err.println("Elige una opción correcta \n");
 				resultado = false;
 			}
+
 		} else if (comunidad.equals("Canarias")) {
 			System.out.println();
 			System.out.print("--OPCIONES PARA VIAJAR EN CANARIAS--"
 					+ "\nPara el destino Canarias tenemos viajes a Tenerife o La Palma"
 					+ "\n¿Qué destino prefieres? \n(1)Tenerife \n(2)La Palma \nOpción: ");
 			destino = escaner1.nextInt();
+
 			if (destino != 1 && destino != 2) {
 				System.err.println("Elige una opción correcta \n");
 				resultado = false;
 			}
+
 		} else if (comunidad.equals("Madrid")) {
 			System.out.println();
 			System.out.print("--OPCIONES PARA VIAJAR EN MADRID--"
 					+ "Para el destino Madrid tenemos viajes a Madrid Capital o Getafe"
 					+ "\n¿Qué destino prefieres? \n(1)Madrid Capital \n(2)Getafe \nOpción: ");
 			destino = escaner1.nextInt();
+
 			if (destino != 1 && destino != 2) {
 				System.err.println("Elige una opción correcta \n");
 				resultado = false;
 			}
+
 		} else if (comunidad.equals("Extremadura")) {
 			System.out.println();
 			System.out.print("--OPCIONES PARA VIAJAR EN EXTREMADURA--"
 					+ "\nPara el destino Extremadura tenemos viajes a Cáceres o Badajoz"
 					+ "\n¿Qué destino prefieres? \n(1)Cáceres \n(2)Badajoz \nOpción: ");
 			destino = escaner1.nextInt();
+
 			if (destino != 1 && destino != 2) {
 				System.err.println("Elige una opción correcta \n");
 				resultado = false;
 			}
+
 		} else {
 			System.err.println("Lo sentimos no hay viajes en " + comunidad + " disponibles...");
 			System.out.println();
