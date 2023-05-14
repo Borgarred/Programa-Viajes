@@ -1,3 +1,7 @@
+package Aplicacion_Viajes;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Usuario {
@@ -61,6 +65,7 @@ public class Usuario {
         System.out.println();
 
 		this.arrayUsuarios[indice] = new DatosUsuario(email, contraseña, nombre, apellidos, DNI, edad);
+		InsertarDatos(indice);
 		numeroUsuarios = numeroUsuarios + 1;
 	}
 
@@ -103,6 +108,32 @@ public class Usuario {
 			indice = -1;
 		}
 		return indice;
+	}
+	
+	public void InsertarDatos(int indice) {
+
+		BufferedWriter out = null;
+
+		try {
+			out = new BufferedWriter(new FileWriter("C:\\Users\\borja\\Desktop\\SesionesRegistradas.txt"));
+
+			for (int i = 0; i <= indice; i++) {
+				out.write("EMAIL:" + arrayUsuarios[i].getEmail() + " CONSTRASEÑA:" + arrayUsuarios[i].getContraseña() + " NOMBRE:" + arrayUsuarios[i].getNombre() + " APELLIDOS:" + arrayUsuarios[i].getApellido() 
+						+ " DNI:" + arrayUsuarios[i].getDNI() + " EDAD:" + arrayUsuarios[i].getEdad() + "\n");
+			}
+
+		} catch (IOException ex) {
+			System.out.println(ex.getMessage());
+
+		} finally {
+			if (out != null) {
+				try {
+					out.close();
+				} catch (IOException ex) {
+					System.out.println(ex);
+				}
+			}
+		}
 	}
 
 }
