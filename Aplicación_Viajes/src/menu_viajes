@@ -1,6 +1,5 @@
 package Aplicacion_Viajes;
 
-
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
@@ -18,67 +17,58 @@ public class menu_viajes extends Usuario {
 	int playa;
 	public int numeroRegalo;
 
-	public menu_viajes() {
-	} // JLF quitados los argumentos de la inicializacion del método
 
-	public void menuDestino() {
+	public menu_viajes() {
+	} 
+
+	public boolean menuDestino() {
 
 		Scanner escaner1 = new Scanner(System.in);
 
-		boolean salir = false;
-		while (salir == false) {
+		boolean resultado = true;
 
-			System.out
-					.println("---ORGANIZA TU VIAJE--- \n¿En que parte de España quieres viajar? (Comunidad Autonoma)");
-			this.comunidad = escaner1.nextLine();
+		System.out.println("---ORGANIZA TU VIAJE--- \n¿En que parte de España quieres viajar? (Comunidad Autonoma)");
+		this.comunidad = escaner1.nextLine();
 
-			if (comunidad.equals("Andalucía")) {
-				System.out.println();
-				System.out.print("--OPCIONES PARA VIAJAR EN ANDALUCIA--"
-						+ "\nPara el destino Andalucia tenemos viajes a Cadiz o Córdoba"
-						+ "\n¿Qué destino prefieres? \n(1)Cadiz \n(2)Córdoba \nOpción: ");
-				destino = escaner1.nextInt();
-				salir = true;
-			}
-
-			else if (comunidad.equals("Canarias")) {
-				System.out.println();
-				System.out.print("--OPCIONES PARA VIAJAR EN CANARIAS--"
-						+ "\nPara el destino Canarias tenemos viajes a Tenerife o La Palma"
-						+ "\n¿Qué destino prefieres? \n(1)Tenerife \n(2)La Palma \nOpción: ");
-				destino = escaner1.nextInt();
-				salir = true;
-			}
-
-			else if (comunidad.equals("Madrid")) {
-				System.out.println();
-				System.out.print("--OPCIONES PARA VIAJAR EN MADRID--"
-						+ "Para el destino Madrid tenemos viajes a Madrid Capital o Getafe"
-						+ "\n¿Qué destino prefieres? \n(1)Madrid Capital \n(2)Getafe \nOpción: ");
-				destino = escaner1.nextInt();
-				salir = true;
-			}
-
-			else if (comunidad.equals("Extremadura")) {
-				System.out.println();
-				System.out.print("--OPCIONES PARA VIAJAR EN EXTREMADURA--"
-						+ "\nPara el destino Extremadura tenemos viajes a Cáceres o Badajoz"
-						+ "\n¿Qué destino prefieres? \n(1)Cáceres \n(2)Badajoz \nOpción: ");
-				destino = escaner1.nextInt();
-				salir = true;
-			}
-
-			else {
-				System.err.println("Lo sentimos no hay viajes en " + comunidad + " disponibles...");
-				System.out.println();
-
-			}
+		if (this.comunidad.equals("Andalucía")) {
+			System.out.println();
+			System.out.print("--OPCIONES PARA VIAJAR EN ANDALUCIA--"
+					+ "\nPara el destino Andalucía tenemos viajes a Cadiz o Córdoba"
+					+ "\n¿Qué destino prefieres? \n(1)Cadiz \n(2)Córdoba \nOpción: ");
+			destino = escaner1.nextInt();
 		}
-		
+		else if (comunidad.equals("Canarias")) {
+			System.out.println();
+			System.out.print("--OPCIONES PARA VIAJAR EN CANARIAS--"
+					+ "\nPara el destino Canarias tenemos viajes a Tenerife o La Palma"
+					+ "\n¿Qué destino prefieres? \n(1)Tenerife \n(2)La Palma \nOpción: ");
+			destino = escaner1.nextInt();
+		}
+		else if (comunidad.equals("Madrid")) {
+			System.out.println();
+			System.out.print("--OPCIONES PARA VIAJAR EN MADRID--"
+					+ "Para el destino Madrid tenemos viajes a Madrid Capital o Getafe"
+					+ "\n¿Qué destino prefieres? \n(1)Madrid Capital \n(2)Getafe \nOpción: ");
+			destino = escaner1.nextInt();
+		}
+		else if (comunidad.equals("Extremadura")) {
+			System.out.println();
+			System.out.print("--OPCIONES PARA VIAJAR EN EXTREMADURA--"
+					+ "\nPara el destino Extremadura tenemos viajes a Cáceres o Badajoz"
+					+ "\n¿Qué destino prefieres? \n(1)Cáceres \n(2)Badajoz \nOpción: ");
+			destino = escaner1.nextInt();
+		}
+		else {
+			System.err.println("Lo sentimos no hay viajes en " + comunidad + " disponibles...");
+			System.out.println();
+			
+			resultado = false;
+		}
+
+		return resultado;
 	}
 
 	public void menuFecha() {
-
 		Scanner escaner2 = new Scanner(System.in);
 
 		System.out.println();
@@ -173,33 +163,33 @@ public class menu_viajes extends Usuario {
 
 		System.out.println("Elige un regalo del 1 al 3: ");
 		int numeroRegalo = sc.nextInt();
-		if (numeroRegalo ==1 || numeroRegalo ==2 || numeroRegalo == 3) {
-		switch (numeroRegalo) {
-		case 1: {
-			// Eliminar un elemento de la pila
-			String eliminado = pila.pop();
-			System.out.println("¡FELICIDADES! \nERES EL GANADOR DEL VIAJE A MALLORCA");
-			System.out.println("Introduce tu email para enviarte proximamente todos los datos: ");
-			String email = sc.nextLine();
-			System.out.println("¡Perfecto, espera nuestra respuesta pronto!");
-			System.out.println();
-			break;
-		}
-		case 2: {
-			System.out.println("Lo sentimos ese regalo no tiene premio...");
-			System.out.println();
+		if (numeroRegalo == 1 || numeroRegalo == 2 || numeroRegalo == 3) {
+			switch (numeroRegalo) {
+			case 1: {
+				// Eliminar un elemento de la pila
+				String eliminado = pila.pop();
+				System.out.println("¡FELICIDADES! \nERES EL GANADOR DEL VIAJE A MALLORCA");
+				System.out.println("Introduce tu email para enviarte proximamente todos los datos: ");
+				String email = sc.nextLine();
+				System.out.println("¡Perfecto, espera nuestra respuesta pronto!");
+				System.out.println();
+				break;
+			}
+			case 2: {
+				System.out.println("Lo sentimos ese regalo no tiene premio...");
+				System.out.println();
 
-			break;
-		}
-		case 3: {
-			System.out.println("Lo sentimos ese regalo no tiene premio...");
-			System.out.println();
+				break;
+			}
+			case 3: {
+				System.out.println("Lo sentimos ese regalo no tiene premio...");
+				System.out.println();
 
-			break;
-		}
-		
-		}}
-		else {
+				break;
+			}
+
+			}
+		} else {
 			System.err.println("Elige un regalo entre el 1 al 3");
 			System.out.println();
 		}
