@@ -1,8 +1,8 @@
-package aplicacion_viajes;
+package Aplicacion_Viajes;
 
 import java.util.Scanner;
 
-public class Main {
+public abstract class Main {
 
 	public static void main(String[] args) {
 
@@ -12,7 +12,7 @@ public class Main {
 
 		int indice_usuario = 0;
 		boolean salir = false, salir1 = false, salir2 = false, salir3 = false;
-		;
+		
 
 		while (salir == false) {
 
@@ -28,7 +28,6 @@ public class Main {
 				case 1: {
 
 					usuario0.NuevoUsuario();
-					usuario0.ListaUsuarios();
 					System.out.println();
 					break;
 
@@ -66,9 +65,14 @@ public class Main {
 				switch (Menu1.opcion2) {
 
 				case 1: {
-
-					viajes.menuDestino();
-					viajes.menuFecha();
+					boolean resultado = false;
+					
+					while(resultado == false) {
+						resultado = viajes.menuDestino();
+						
+						if(resultado == true)
+							viajes.menuFecha();
+					}
 					break;
 				}
 				case 2: {
