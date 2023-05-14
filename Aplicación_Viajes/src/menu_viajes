@@ -1,4 +1,4 @@
-package Aplicacion_Viajes;
+package aplicacion_viajes;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -36,6 +36,10 @@ public class menu_viajes extends Usuario {
 					+ "\nPara el destino Andalucía tenemos viajes a Cadiz o Córdoba"
 					+ "\n¿Qué destino prefieres? \n(1)Cadiz \n(2)Córdoba \nOpción: ");
 			destino = escaner1.nextInt();
+			if (destino != 1 && destino != 2) {
+				System.err.println("Elige una opción correcta \n");
+				resultado = false;
+			}
 		}
 		else if (comunidad.equals("Canarias")) {
 			System.out.println();
