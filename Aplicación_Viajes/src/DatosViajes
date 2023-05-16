@@ -1,0 +1,28 @@
+package Aplicacion_Viajes;
+
+import java.util.Date;
+
+public class DatosViajes {
+	
+	protected Usuario usuario;
+	protected String localidad;
+	protected String comunidad;
+	protected Date hora;
+
+	public DatosViajes() {
+		
+	}
+	
+	public DatosViajes(Usuario usuario, String comunidad, String localidad, Date hora) {
+		this.usuario = usuario;
+		this.comunidad = comunidad;
+		this.localidad = localidad;
+		this.hora = hora;
+		
+	}
+	
+	
+
+	
+
+}
